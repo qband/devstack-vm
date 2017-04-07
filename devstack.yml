@@ -25,6 +25,9 @@
         src=files/keyringrc.cfg
         dest={{ keyring_config_dir }}/keyringrc.cfg
 
+    - name: setup apt mirror
+      script: files/apt_config.sh
+
     - name: install git
       apt: "name=git update_cache=yes"
       become: True
